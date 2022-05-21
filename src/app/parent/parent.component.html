@@ -1,4 +1,21 @@
 <div>
-<p>{{fromchild}}</p>
-  <app-child [dataFromParent]="name" (senddata)="receivedata($event)" ></app-child>  
+ 
+
+
 </div>
+
+<table border="1" rules="all">
+  <tr>
+    <th>regno</th>
+    <th>name</th>
+  </tr>
+  <tr *ngFor="let student of students" [ngClass]="{green:student.name=='shan' || student.name=='murali'
+|| student.name=='bill',
+red:student.name=='krish' || student.name=='sibin'
+}">
+    <td>{{student.regno}}</td>
+    <td>{{student.name}}</td>
+  </tr>
+</table>
+
+<!-- || student.name='murali' || student.name='bill' -->
