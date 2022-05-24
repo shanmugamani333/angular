@@ -1,0 +1,33 @@
+1.host listner:
+
+used to handle the user events:
+
+ex.mouse enter,mouseleave
+
+in this event we need to add property means we can follow this thing;
+
+1.first i need to add one custom  directive used to change to structure of element
+2.we need to call the element ,so we can access that element by element ref class using constructor;
+
+3.then using that variable in constructor we can call that element then we can change property,
+
+ex.
+1.constructor(public el:ElementRef) { }->calling element;
+
+2)
+a.using that element by nativeElement function:
+
+  private highlight(color: string) {
+    this.el.nativeElement.style.backgroundColor = color;
+  }
+
+3)  @hostListner('onMouseEnter') onMouseEnter(){
+    this.highlight('yellow');
+}
+
+@hostListner('mouseleave') onmouseleave(){
+    this.highlight('yellow');
+}
+
+we can fit this in particular element using directive and we can set it in component by place it in component.ts
+
